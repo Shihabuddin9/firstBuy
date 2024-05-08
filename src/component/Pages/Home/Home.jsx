@@ -1,4 +1,5 @@
 import Navbar from "../../Shared/Navbar/Navbar";
+import ExploreMenu from "../ExploreMenu/ExploreMenu";
 import Header from "../Header/Header";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
         <div className="">
             <Navbar></Navbar>
             <Header></Header>
+            <ExploreMenu></ExploreMenu>
         </div>
     );
 };
