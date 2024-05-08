@@ -1,9 +1,11 @@
 import Navbar from "../../Shared/Navbar/Navbar";
+import Header from "../Header/Header";
 
 const Home = () => {
     return (
-        <div>
+        <div className="">
             <Navbar></Navbar>
+            <Header></Header>
         </div>
     );
 };

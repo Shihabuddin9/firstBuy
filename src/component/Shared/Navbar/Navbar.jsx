@@ -5,9 +5,9 @@ import { CiSearch } from "react-icons/ci";
 const Navbar = () => {
     const Links = <>
         <li> <NavLink to='/'>Home</NavLink></li>
-        <li><NavLink className='mx-5' to='/menu'>Menu</NavLink></li>
+        <li><NavLink className='md:mx-5' to='/menu'>Menu</NavLink></li>
         <li> <NavLink to='/mobileApp'>Mobile app</NavLink></li>
-        <li><NavLink className='ml-5' to='/ContactUs'>Contact us</NavLink></li>
+        <li><NavLink className='md:ml-5' to='/ContactUs'>Contact us</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -29,12 +29,12 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 <div className=" md:text-2xl">
-                    <CiSearch />
+                    <CiSearch className="cursor-pointer" />
                 </div>
-                <div className="mx-5 md:text-2xl">
-                    <FaCartPlus />
+                <div className="md:mx-5 mx-2 md:text-2xl">
+                    <FaCartPlus className="cursor-pointer" />
                 </div>
-                <Link to='/signIn' className="btn">Sign in</Link>
+                <Link to='/signIn' className="border rounded-full px-3 py-0.5 hover:bg-slate-100 duration-700">Sign in</Link>
             </div>
         </div>
     );
