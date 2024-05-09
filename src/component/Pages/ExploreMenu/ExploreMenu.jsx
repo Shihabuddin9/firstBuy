@@ -1,25 +1,25 @@
-
 const ExploreMenu = () => {
     return (
-        <div className="mt-10 mb-80">
-            <div className="w-3/5">
-                <h2 className="text-2xl font-semibold">Discover Our Delectable Menu</h2>
-                <p className="text-sm mt-4 text-gray-900">Indulge in culinary delights with our diverse menu featuring tantalizing dishes crafted to satisfy every palate and craving. Explore now!</p>
+        <div className="mt-10 mb-10 md:mb-20">
+            <div className="md:w-3/5">
+                <h2 className="text-xl md:text-2xl font-semibold">Discover Our Delectable Menu</h2>
+                <p className="mt-4 text-sm text-gray-900">Indulge in culinary delights with our diverse menu featuring tantalizing dishes crafted to satisfy every palate and craving. Explore now!</p>
             </div>
-            <div className="mt-10">
-                <ul className="flex justify-between">
-                    <li className="">Salad</li>
-                    <li>Rolls</li>
-                    <li>Deserts</li>
-                    <li>Sandwich</li>
-                    <li>Cake</li>
-                    <li>Pure veg</li>
-                    <li>Pasta</li>
-                    <li>Noodles</li>
+            <div className="mt-10 md:mt-7">
+                <ul className="grid grid-cols-3 md:flex md:justify-between md:gap-0 gap-5">
+                    {menuItems.map((item, index) => (
+                        <li key={index} className="cursor-pointer border px-2 py-1 rounded text-sky-400 text-center hover:bg-yellow-200 hover:text-sky-400">{item}</li>
+                    ))}
                 </ul>
             </div>
         </div>
     );
 };
+
+// Define menu items array
+const menuItems = [
+    "Salad", "Rolls", "Desserts", "Sandwich",
+    "Cake", "Veg", "Pasta", "Noodles"
+];
 
 export default ExploreMenu;
