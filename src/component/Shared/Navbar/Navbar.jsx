@@ -25,8 +25,8 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
 
-                    <div className="relative">
-                        <div className={`fixed left-0 top-0 z-30 flex h-screen w-4/5 max-w-full bg-white shadow-lg ${isOpen ? 'hidden translate-x-full' : "block translate-x-0"}`}>
+                    <div className={`relative ${isOpen ? '' : "hidden"}`}>
+                        <div className={`fixed left-0  top-0 z-30 flex h-screen w-4/5 max-w-full bg-white shadow-lg `}>
 
                             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-10 ml-5 z-[1] p-2">
                                 {Links}
@@ -35,8 +35,6 @@ const Navbar = () => {
                             <button onClick={handleClose} className="top-5 text-3xl absolute right-10">X</button>
                         </div>
                     </div>
-
-
                 </div>
 
                 <a className="text-xl font-serif"><span className="text-3xl text-red-700">F</span>irstBuy</a>

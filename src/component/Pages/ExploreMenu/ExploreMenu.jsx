@@ -1,4 +1,12 @@
+import { useState } from 'react';
+
 const ExploreMenu = () => {
+    const [activeItem, setActiveItem] = useState(null);
+
+    const handleItemClick = (index) => {
+        setActiveItem(index);
+    };
+
     return (
         <div className="mt-10 mb-10 md:mb-20">
             <div className="md:w-3/5">
@@ -8,7 +16,15 @@ const ExploreMenu = () => {
             <div className="mt-10 md:mt-7">
                 <ul className="grid grid-cols-3 md:flex md:justify-between md:gap-0 gap-5">
                     {menuItems.map((item, index) => (
-                        <li key={index} className="cursor-pointer border px-2 py-1 rounded text-sky-400 text-center hover:bg-yellow-200 hover:text-sky-400">{item}</li>
+                        <li
+                            key={index}
+                            className={`cursor-pointer border px-2 py-1 rounded text-center 
+                                        ${activeItem === index ? 'bg-yellow-200 text-sky-400' : 'text-sky-400'} 
+                                        hover:bg-yellow-200 hover:text-sky-400 `}
+                            onClick={() => handleItemClick(index)}
+                        >
+                            {item}
+                        </li>
                     ))}
                 </ul>
             </div>
