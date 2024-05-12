@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Provider/Context/Context';
 
 const ExploreMenu = () => {
+    const { handleFilterFood } = useContext(AuthContext)
     const [activeItem, setActiveItem] = useState(null);
 
     const handleItemClick = (index) => {
         setActiveItem(index);
     };
-
     return (
         <div className="mt-10 mb-10 md:mb-20">
             <div className="md:w-3/5">
@@ -21,7 +22,10 @@ const ExploreMenu = () => {
                             className={`cursor-pointer border px-2 py-1 rounded text-center 
                                         ${activeItem === index ? 'bg-yellow-200 text-sky-400' : 'text-sky-400'} 
                                         hover:bg-yellow-200 hover:text-sky-400 `}
-                            onClick={() => handleItemClick(index)}
+                            onClick={() => {
+                                handleItemClick(index)
+                                handleFilterFood(item)
+                            }}
                         >
                             {item}
                         </li>
@@ -34,7 +38,7 @@ const ExploreMenu = () => {
 
 // Define menu items array
 const menuItems = [
-    "Salad", "Rolls", "Desserts", "Sandwich",
+    "All Foods", "Salad", "Rolls", "Desserts", "Sandwich",
     "Cake", "Veg", "Pasta", "Noodles"
 ];
 

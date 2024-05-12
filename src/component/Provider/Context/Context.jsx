@@ -6,6 +6,7 @@ export const AuthContext = createContext(null)
 const Context = ({ children }) => {
     const [allFoods, setAllFoods] = useState([])
     const [cartItems, setCartItems] = useState({})
+    const [displayFood, setDisplayFood] = useState([])
 
     const fetchData = async () => {
         try {
@@ -15,6 +16,16 @@ const Context = ({ children }) => {
             console.error('Error fetching data:', error);
         }
     };
+
+    const handleFilterFood = (item) => {
+        if (item && item !== 'All Foods') {
+            // If no category is selected, display all food items
+            const foodCategory = allFoods.filter(food => item === food.category);
+            setDisplayFood(foodCategory);
+        } else if (item === "All Foods") {
+            setDisplayFood(allFoods);
+        }
+    }
 
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
@@ -38,9 +49,13 @@ const Context = ({ children }) => {
 
     const contextInfo = {
         allFoods,
+        setAllFoods,
         addToCart,
         removeFromCart,
         cartItems,
+        displayFood,
+        setDisplayFood,
+        handleFilterFood,
     }
     return (
         <AuthContext.Provider value={contextInfo}>
