@@ -23,7 +23,7 @@ const FoodCart = ({ food }) => {
             <div className="absolute top-3 right-7">
                 {
                     !cartItems[id] ?
-                        <button onClick={() => addToCart(id)}><IoMdAdd className="text-xl bg-white rounded-full hover:text-sky-700" /></button>
+                        <button onClick={() => addToCart(id)}><IoMdAdd className="text-xl bg-slate-200 rounded-full p-0.5 text-gray-600 hover:text-sky-700" /></button>
                         :
                         <div className="flex justify-center items-center">
                             <button onClick={() => removeFromCart(id)}><AiFillMinusCircle className="text-xl text-red-500" /></button>
