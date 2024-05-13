@@ -9,10 +9,13 @@ const FoodDisplay = () => {
         setDisplayFood(allFoods)
     }, [allFoods])
     return (
-        <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5">
-            {
-                displayFood?.map(food => <FoodCart key={food.id} food={food}></FoodCart>)
-            }
+        <div>
+            <hr className="mb-10" />
+            <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5">
+                {
+                    displayFood?.map(food => <FoodCart key={food.id} food={food}></FoodCart>)
+                }
+            </div>
         </div>
     );
 };

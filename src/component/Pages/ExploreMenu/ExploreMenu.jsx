@@ -9,7 +9,7 @@ const ExploreMenu = () => {
         setActiveItem(index);
     };
     return (
-        <div className="mt-10 mb-10 md:mb-20">
+        <div className="mt-10 mb-10 md:mb-10">
             <div className="md:w-3/5">
                 <h2 className="text-xl md:text-2xl font-semibold">Discover Our Delectable Menu</h2>
                 <p className="mt-4 text-sm text-gray-900">Indulge in culinary delights with our diverse menu featuring tantalizing dishes crafted to satisfy every palate and craving. Explore now!</p>

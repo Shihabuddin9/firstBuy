@@ -8,7 +8,9 @@ const FoodCart = ({ food }) => {
     const { addToCart, removeFromCart, cartItems, } = useContext(AuthContext)
 
     return (
-        <div className="border bg-slate-100 p-3 rounded relative hover:border-sky-500 cursor-pointer">
+        <div className={`border bg-slate-100 p-3 rounded relative cursor-pointer
+        ${cartItems[id] ? 'border-sky-500 hover:border-sky-300' : 'hover:border-sky-500'}
+        `}>
             <h2 className="font-semibold">{name}</h2>
             <h4 className="my-1 text-red-600">${price}</h4>
             <p className=" text-gray-600">{description.slice(0, 50)}</p>

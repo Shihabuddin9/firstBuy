@@ -1,9 +1,13 @@
 import { Outlet } from "react-router-dom";
+import Footer from "../Shared/Footer/Footer";
+import Navbar from "../Shared/Navbar/Navbar";
 
 const Root = () => {
     return (
-        <div className="md:mx-10 mx-5">
+        <div className="">
+            <Navbar></Navbar>
             <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };

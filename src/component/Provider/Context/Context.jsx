@@ -22,7 +22,8 @@ const Context = ({ children }) => {
             // If no category is selected, display all food items
             const foodCategory = allFoods.filter(food => item === food.category);
             setDisplayFood(foodCategory);
-        } else if (item === "All Foods") {
+        }
+        else if (item === "All Foods") {
             setDisplayFood(allFoods);
         }
     }
