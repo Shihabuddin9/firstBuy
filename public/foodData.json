@@ -1,200 +1,8 @@
 [
     {
-        "id": "1",
-        "name": "Greek Salad",
-        "image": "greek_salad.jpg",
-        "price": 8.99,
-        "description": "A refreshing salad with crisp lettuce, juicy tomatoes, cucumbers, olives, onions, and feta cheese, tossed in a tangy Greek dressing.",
-        "category": "Salad"
-    },
-    {
-        "id": "2",
-        "name": "Caesar Salad",
-        "image": "caesar_salad.jpg",
-        "price": 7.99,
-        "description": "Classic Caesar salad featuring romaine lettuce, garlic croutons, Parmesan cheese, and a creamy Caesar dressing, garnished with anchovies (optional).",
-        "category": "Salad"
-    },
-    {
-        "id": "3",
-        "name": "Cobb Salad",
-        "image": "cobb_salad.jpg",
-        "price": 9.99,
-        "description": "A hearty salad made with mixed greens, grilled chicken breast, crispy bacon, hard-boiled eggs, avocado, tomatoes, and blue cheese, served with your choice of dressing.",
-        "category": "Salad"
-    },
-    {
-        "id": "4",
-        "name": "Caprese Salad",
-        "image": "caprese_salad.jpg",
-        "price": 6.99,
-        "description": "A simple yet elegant salad featuring fresh tomatoes, mozzarella cheese, basil leaves, drizzled with extra virgin olive oil and balsamic glaze, seasoned with salt and pepper.",
-        "category": "Salad"
-    },
-    {
-        "id": "5",
-        "name": "Sushi Rolls",
-        "image": "sushi_rolls.jpg",
-        "price": 10.99,
-        "description": "Delicious sushi rolls filled with a variety of ingredients such as fresh fish, avocado, cucumber, and rice, served with soy sauce and wasabi.",
-        "category": "Rolls"
-    },
-    {
-        "id": "6",
-        "name": "Spring Rolls",
-        "image": "spring_rolls.jpg",
-        "price": 6.99,
-        "description": "Crispy and light spring rolls filled with vegetables and sometimes meat, served with a sweet and sour dipping sauce.",
-        "category": "Rolls"
-    },
-    {
-        "id": "7",
-        "name": "Egg Rolls",
-        "image": "egg_rolls.jpg",
-        "price": 8.99,
-        "description": "Fried egg rolls filled with a savory mixture of chopped vegetables and meat, typically served with plum sauce or sweet chili sauce.",
-        "category": "Rolls"
-    },
-    {
-        "id": "8",
-        "name": "California Rolls",
-        "image": "california_rolls.jpg",
-        "price": 9.99,
-        "description": "Popular sushi rolls made with imitation crab meat, avocado, and cucumber, wrapped in seaweed and sushi rice, served with pickled ginger and wasabi.",
-        "category": "Rolls"
-    },
-    {
-        "id": "9",
-        "name": "Chocolate Cake",
-        "image": "chocolate_cake.jpg",
-        "price": 5.99,
-        "description": "Decadent chocolate cake with layers of moist chocolate sponge and rich chocolate ganache, topped with chocolate shavings.",
-        "category": "Desserts"
-    },
-    {
-        "id": "10",
-        "name": "Cheesecake",
-        "image": "cheesecake.jpg",
-        "price": 7.99,
-        "description": "Creamy and smooth cheesecake on a buttery graham cracker crust, topped with your choice of fruit compote or chocolate sauce.",
-        "category": "Desserts"
-    },
-    {
-        "id": "11",
-        "name": "Tiramisu",
-        "image": "tiramisu.jpg",
-        "price": 8.99,
-        "description": "Classic Italian dessert made with layers of coffee-soaked ladyfingers, mascarpone cheese, and cocoa powder, creating a rich and creamy indulgence.",
-        "category": "Desserts"
-    },
-    {
-        "id": "12",
-        "name": "Fruit Tart",
-        "image": "fruit_tart.jpg",
-        "price": 6.99,
-        "description": "Buttery tart shell filled with pastry cream and topped with an assortment of fresh fruit, glazed with apricot jam for a shiny finish.",
-        "category": "Desserts"
-    },
-    {
-        "id": "13",
-        "name": "Club Sandwich",
-        "image": "club_sandwich.jpg",
-        "price": 9.99,
-        "description": "Classic triple-decker sandwich filled with layers of roasted turkey, crispy bacon, lettuce, tomato, and mayonnaise, served with a side of fries.",
-        "category": "Sandwich"
-    },
-    {
-        "id": "14",
-        "name": "BLT Sandwich",
-        "image": "blt_sandwich.jpg",
-        "price": 7.99,
-        "description": "Simple yet satisfying sandwich with crispy bacon, fresh lettuce, and juicy tomato slices, served on toasted bread with mayonnaise.",
-        "category": "Sandwich"
-    },
-    {
-        "id": "15",
-        "name": "Grilled Cheese Sandwich",
-        "image": "grilled_cheese_sandwich.jpg",
-        "price": 6.99,
-        "description": "Comforting grilled sandwich with melted cheese between slices of buttered bread, toasted until golden brown and crispy.",
-        "category": "Sandwich"
-    },
-    {
-        "id": "16",
-        "name": "Vegetarian Sandwich",
-        "image": "vegetarian_sandwich.jpg",
-        "price": 8.99,
-        "description": "Healthy and delicious sandwich filled with a variety of fresh vegetables, such as lettuce, tomato, cucumber, avocado, and bell peppers, served on whole wheat bread.",
-        "category": "Sandwich"
-    },
-    {
-        "id": "17",
-        "name": "Red Velvet Cake",
-        "image": "red_velvet_cake.jpg",
-        "price": 6.99,
-        "description": "Classic red velvet cake with layers of moist red cocoa sponge and creamy cream cheese frosting, decorated with red velvet crumbs.",
-        "category": "Cake"
-    },
-    {
-        "id": "18",
-        "name": "Carrot Cake",
-        "image": "carrot_cake.jpg",
-        "price": 8.99,
-        "description": "Moist carrot cake made with grated carrots, warm spices, and chopped nuts, topped with smooth cream cheese frosting and a sprinkle of cinnamon.",
-        "category": "Cake"
-    },
-    {
-        "id": "19",
-        "name": "Black Forest Cake",
-        "image": "black_forest_cake.jpg",
-        "price": 9.99,
-        "description": "Decadent chocolate cake layered with whipped cream and cherries, topped with chocolate shavings and more cherries, creating a delightful combination of flavors.",
-        "category": "Cake"
-    },
-    {
-        "id": "20",
-        "name": "Lemon Cake",
-        "image": "lemon_cake.jpg",
-        "price": 7.99,
-        "description": "Zesty lemon cake with a tangy lemon glaze, made with fresh lemon zest and juice for a bright and refreshing dessert.",
-        "category": "Cake"
-    },
-    {
-        "id": "21",
-        "name": "Vegetable Stir-Fry",
-        "image": "vegetable_stir_fry.jpg",
-        "price": 9.99,
-        "description": "A delicious medley of fresh vegetables stir-fried to perfection in a savory sauce, served over steamed rice or noodles.",
-        "category": "Veg"
-    },
-    {
-        "id": "22",
-        "name": "Vegetable Curry",
-        "image": "vegetable_curry.jpg",
-        "price": 8.99,
-        "description": "Hearty and comforting vegetable curry made with a variety of seasonal vegetables simmered in a fragrant blend of spices and coconut milk, served with rice or bread.",
-        "category": "Veg"
-    },
-    {
-        "id": "23",
-        "name": "Grilled Vegetable Platter",
-        "image": "grilled_veggie_platter.jpg",
-        "price": 11.99,
-        "description": "A colorful assortment of grilled vegetables such as bell peppers, zucchini, eggplant, and mushrooms, seasoned with herbs and olive oil, served with a side of dipping sauce.",
-        "category": "Veg"
-    },
-    {
-        "id": "24",
-        "name": "Vegetable Biryani",
-        "image": "vegetable_biryani.jpg",
-        "price": 10.99,
-        "description": "Fragrant and flavorful biryani made with basmati rice, mixed vegetables, and aromatic spices, garnished with fried onions and fresh herbs, served with raita.",
-        "category": "Veg"
-    },
-    {
         "id": "25",
         "name": "Spaghetti Carbonara",
-        "image": "spaghetti_carbonara.jpg",
+        "image": "https://i.imgur.com/CYBJ1gV.png",
         "price": 12.99,
         "description": "Classic Italian pasta dish made with spaghetti tossed in a creamy sauce of eggs, Parmesan cheese, pancetta or bacon, and black pepper, creating a rich and indulgent meal.",
         "category": "Pasta"
@@ -202,7 +10,7 @@
     {
         "id": "26",
         "name": "Penne Arrabbiata",
-        "image": "penne_arrabbiata.jpg",
+        "image": "https://i.imgur.com/CYBJ1gV.png",
         "price": 10.99,
         "description": "Spicy and flavorful penne pasta served in a fiery tomato sauce infused with garlic, red chili flakes, and fresh basil, topped with grated Parmesan cheese.",
         "category": "Pasta"
@@ -210,7 +18,7 @@
     {
         "id": "27",
         "name": "Fettuccine Alfredo",
-        "image": "fettuccine_alfredo.jpg",
+        "image": "https://i.imgur.com/CYBJ1gV.png",
         "price": 11.99,
         "description": "Rich and creamy fettuccine pasta tossed in a decadent Alfredo sauce made with butter, cream, and Parmesan cheese, seasoned with salt, pepper, and nutmeg.",
         "category": "Pasta"
@@ -218,31 +26,223 @@
     {
         "id": "28",
         "name": "Vegetable Lasagna",
-        "image": "vegetable_lasagna.jpg",
+        "image": "https://i.imgur.com/CYBJ1gV.png",
         "price": 13.99,
         "description": "Layers of lasagna noodles, marinara sauce, sautéed vegetables, and creamy ricotta cheese, baked until bubbly and golden brown, creating a satisfying and comforting dish.",
         "category": "Pasta"
     },
     {
+        "id": "1",
+        "name": "Greek Salad",
+        "image": "https://i.imgur.com/oF3i5EP.png",
+        "price": 8.99,
+        "description": "A refreshing salad with crisp lettuce, juicy tomatoes, cucumbers, olives, onions, and feta cheese, tossed in a tangy Greek dressing.",
+        "category": "Salad"
+    },
+    {
+        "id": "2",
+        "name": "Caesar Salad",
+        "image": "https://i.imgur.com/oF3i5EP.png",
+        "price": 7.99,
+        "description": "Classic Caesar salad featuring romaine lettuce, garlic croutons, Parmesan cheese, and a creamy Caesar dressing, garnished with anchovies (optional).",
+        "category": "Salad"
+    },
+    {
+        "id": "3",
+        "name": "Cobb Salad",
+        "image": "https://i.imgur.com/oF3i5EP.png",
+        "price": 9.99,
+        "description": "A hearty salad made with mixed greens, grilled chicken breast, crispy bacon, hard-boiled eggs, avocado, tomatoes, and blue cheese, served with your choice of dressing.",
+        "category": "Salad"
+    },
+    {
+        "id": "4",
+        "name": "Caprese Salad",
+        "image": "https://i.imgur.com/oF3i5EP.png",
+        "price": 6.99,
+        "description": "A simple yet elegant salad featuring fresh tomatoes, mozzarella cheese, basil leaves, drizzled with extra virgin olive oil and balsamic glaze, seasoned with salt and pepper.",
+        "category": "Salad"
+    },
+    {
+        "id": "5",
+        "name": "Sushi Rolls",
+        "image": "https://i.imgur.com/lEwgrAo.png",
+        "price": 10.99,
+        "description": "Delicious sushi rolls filled with a variety of ingredients such as fresh fish, avocado, cucumber, and rice, served with soy sauce and wasabi.",
+        "category": "Rolls"
+    },
+    {
+        "id": "6",
+        "name": "Spring Rolls",
+        "image": "https://i.imgur.com/lEwgrAo.png",
+        "price": 6.99,
+        "description": "Crispy and light spring rolls filled with vegetables and sometimes meat, served with a sweet and sour dipping sauce.",
+        "category": "Rolls"
+    },
+    {
+        "id": "7",
+        "name": "Egg Rolls",
+        "image": "https://i.imgur.com/lEwgrAo.png",
+        "price": 8.99,
+        "description": "Fried egg rolls filled with a savory mixture of chopped vegetables and meat, typically served with plum sauce or sweet chili sauce.",
+        "category": "Rolls"
+    },
+    {
+        "id": "8",
+        "name": "California Rolls",
+        "image": "https://i.imgur.com/lEwgrAo.png",
+        "price": 9.99,
+        "description": "Popular sushi rolls made with imitation crab meat, avocado, and cucumber, wrapped in seaweed and sushi rice, served with pickled ginger and wasabi.",
+        "category": "Rolls"
+    },
+    {
+        "id": "9",
+        "name": "Chocolate Cake",
+        "image": "https://i.imgur.com/YP1jJwo.png",
+        "price": 5.99,
+        "description": "Decadent chocolate cake with layers of moist chocolate sponge and rich chocolate ganache, topped with chocolate shavings.",
+        "category": "Desserts"
+    },
+    {
+        "id": "10",
+        "name": "Cheesecake",
+        "image": "https://i.imgur.com/YP1jJwo.png",
+        "price": 7.99,
+        "description": "Creamy and smooth cheesecake on a buttery graham cracker crust, topped with your choice of fruit compote or chocolate sauce.",
+        "category": "Desserts"
+    },
+    {
+        "id": "11",
+        "name": "Tiramisu",
+        "image": "https://i.imgur.com/YP1jJwo.png",
+        "price": 8.99,
+        "description": "Classic Italian dessert made with layers of coffee-soaked ladyfingers, mascarpone cheese, and cocoa powder, creating a rich and creamy indulgence.",
+        "category": "Desserts"
+    },
+    {
+        "id": "12",
+        "name": "Fruit Tart",
+        "image": "https://i.imgur.com/YP1jJwo.png",
+        "price": 6.99,
+        "description": "Buttery tart shell filled with pastry cream and topped with an assortment of fresh fruit, glazed with apricot jam for a shiny finish.",
+        "category": "Desserts"
+    },
+    {
+        "id": "13",
+        "name": "Club Sandwich",
+        "image": "https://i.imgur.com/s1yTPGJ.png",
+        "price": 9.99,
+        "description": "Classic triple-decker sandwich filled with layers of roasted turkey, crispy bacon, lettuce, tomato, and mayonnaise, served with a side of fries.",
+        "category": "Sandwich"
+    },
+    {
+        "id": "14",
+        "name": "BLT Sandwich",
+        "image": "https://i.imgur.com/s1yTPGJ.png",
+        "price": 7.99,
+        "description": "Simple yet satisfying sandwich with crispy bacon, fresh lettuce, and juicy tomato slices, served on toasted bread with mayonnaise.",
+        "category": "Sandwich"
+    },
+    {
+        "id": "15",
+        "name": "Grilled Cheese Sandwich",
+        "image": "https://i.imgur.com/s1yTPGJ.png",
+        "price": 6.99,
+        "description": "Comforting grilled sandwich with melted cheese between slices of buttered bread, toasted until golden brown and crispy.",
+        "category": "Sandwich"
+    },
+    {
+        "id": "16",
+        "name": "Vegetarian Sandwich",
+        "image": "https://i.imgur.com/s1yTPGJ.png",
+        "price": 8.99,
+        "description": "Healthy and delicious sandwich filled with a variety of fresh vegetables, such as lettuce, tomato, cucumber, avocado, and bell peppers, served on whole wheat bread.",
+        "category": "Sandwich"
+    },
+    {
+        "id": "17",
+        "name": "Red Velvet Cake",
+        "image": "https://i.imgur.com/WJXwbSy.png",
+        "price": 6.99,
+        "description": "Classic red velvet cake with layers of moist red cocoa sponge and creamy cream cheese frosting, decorated with red velvet crumbs.",
+        "category": "Cake"
+    },
+    {
+        "id": "18",
+        "name": "Carrot Cake",
+        "image": "https://i.imgur.com/WJXwbSy.png",
+        "price": 8.99,
+        "description": "Moist carrot cake made with grated carrots, warm spices, and chopped nuts, topped with smooth cream cheese frosting and a sprinkle of cinnamon.",
+        "category": "Cake"
+    },
+    {
+        "id": "19",
+        "name": "Black Forest Cake",
+        "image": "https://i.imgur.com/WJXwbSy.png",
+        "price": 9.99,
+        "description": "Decadent chocolate cake layered with whipped cream and cherries, topped with chocolate shavings and more cherries, creating a delightful combination of flavors.",
+        "category": "Cake"
+    },
+    {
+        "id": "20",
+        "name": "Lemon Cake",
+        "image": "https://i.imgur.com/WJXwbSy.png",
+        "price": 7.99,
+        "description": "Zesty lemon cake with a tangy lemon glaze, made with fresh lemon zest and juice for a bright and refreshing dessert.",
+        "category": "Cake"
+    },
+    {
+        "id": "21",
+        "name": "Vegetable Stir-Fry",
+        "image": "https://i.imgur.com/vX3Jcr6.png",
+        "price": 9.99,
+        "description": "A delicious medley of fresh vegetables stir-fried to perfection in a savory sauce, served over steamed rice or noodles.",
+        "category": "Veg"
+    },
+    {
+        "id": "22",
+        "name": "Vegetable Curry",
+        "image": "https://i.imgur.com/vX3Jcr6.png",
+        "price": 8.99,
+        "description": "Hearty and comforting vegetable curry made with a variety of seasonal vegetables simmered in a fragrant blend of spices and coconut milk, served with rice or bread.",
+        "category": "Veg"
+    },
+    {
+        "id": "23",
+        "name": "Grilled Vegetable Platter",
+        "image": "https://i.imgur.com/vX3Jcr6.png",
+        "price": 11.99,
+        "description": "A colorful assortment of grilled vegetables such as bell peppers, zucchini, eggplant, and mushrooms, seasoned with herbs and olive oil, served with a side of dipping sauce.",
+        "category": "Veg"
+    },
+    {
+        "id": "24",
+        "name": "Vegetable Biryani",
+        "image": "https://i.imgur.com/vX3Jcr6.png",
+        "price": 10.99,
+        "description": "Fragrant and flavorful biryani made with basmati rice, mixed vegetables, and aromatic spices, garnished with fried onions and fresh herbs, served with raita.",
+        "category": "Veg"
+    },
+    {
         "id": "29",
-        "name": "Chow Mein",
-        "image": "chow_mein.jpg",
+        "name": "chow mein",
+        "image": "https://i.imgur.com/hGsn282.png",
         "price": 8.99,
         "description": "Stir-fried noodles tossed with a variety of vegetables and protein such as chicken, beef, or tofu, in a savory soy sauce-based sauce, creating a flavorful and satisfying dish.",
         "category": "Noodles"
     },
     {
         "id": "30",
-        "name": "Pad Thai",
-        "image": "pad_thai.jpg",
+        "name": "pad thai",
+        "image": "https://i.imgur.com/hGsn282.png",
         "price": 9.99,
         "description": "A popular Thai dish consisting of stir-fried rice noodles with eggs, tofu, shrimp, bean sprouts, and peanuts, flavored with tamarind sauce and garnished with lime wedges.",
         "category": "Noodles"
     },
     {
         "id": "31",
-        "name": "Soba Noodle Salad",
-        "image": "soba_noodle_salad.jpg",
+        "name": "soba noodle salad",
+        "image": "https://i.imgur.com/hGsn282.png",
         "price": 7.99,
         "description": "Refreshing salad made with cold soba noodles, mixed greens, shredded vegetables, and a tangy sesame dressing, garnished with toasted sesame seeds and sliced green onions.",
         "category": "Noodles"
@@ -250,7 +250,7 @@
     {
         "id": "32",
         "name": "Ramen Soup",
-        "image": "ramen_soup.jpg",
+        "image": "https://i.imgur.com/hGsn282.png",
         "price": 10.99,
         "description": "Japanese noodle soup made with wheat noodles, savory broth, slices of roasted pork, soft-boiled eggs, bamboo shoots, seaweed, and green onions, creating a comforting and satisfying meal.",
         "category": "Noodles"

@@ -4,16 +4,21 @@ import { AiFillMinusCircle } from "react-icons/ai";
 import { AuthContext } from "../../Provider/Context/Context";
 
 const FoodCart = ({ food }) => {
-    const { id, name, price, description, category } = food
+    const { id, name, price, description, category, image } = food
     const { addToCart, removeFromCart, cartItems, } = useContext(AuthContext)
 
     return (
-        <div className={`border bg-slate-100 p-3 rounded relative cursor-pointer
-        ${cartItems[id] ? 'border-sky-500 hover:border-sky-300' : 'hover:border-sky-500'}
+        <div className={`border md:border-0 py-7 rounded relative cursor-pointer
+        ${cartItems[id] ? 'hover:shadow shadow-md' : 'hover:shadow-md'}
         `}>
-            <h2 className="font-semibold">{name}</h2>
-            <h4 className="my-1 text-red-600">${price}</h4>
-            <p className=" text-gray-600">{description.slice(0, 50)}</p>
+            <div>
+                <img className="p-5 w-60" src={image} alt="" />
+            </div>
+            <div className="mx-3">
+                <h2 className="font-semibold text-center">{name}</h2>
+                <h4 className="my-1 text-red-600 text-center">${price}</h4>
+                <p className=" text-gray-600 text-center">{description.slice(0, 50)}</p>
+            </div>
 
             <div className="absolute top-3 right-7">
                 {

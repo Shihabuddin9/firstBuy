@@ -38,8 +38,8 @@ const ExploreMenu = () => {
 
 // Define menu items array
 const menuItems = [
-    "All Foods", "Salad", "Rolls", "Desserts", "Sandwich",
-    "Cake", "Veg", "Pasta", "Noodles"
+    "All Foods", "Pasta", "Salad", "Rolls", "Desserts", "Sandwich",
+    "Cake", "Veg", "Noodles"
 ];
 
 export default ExploreMenu;
