@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/Context/Context";
 
 const Navbar = () => {
+    const { createLogOut, user } = useContext(AuthContext)
     const [isOpen, setIsOpen] = useState(false)
 
     const Links = <>
@@ -17,6 +19,15 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
 
+    const handleLogOut = () => {
+        createLogOut()
+            .then(() => {
+                // Sign-out successful.
+            }).catch((error) => {
+                // An error happened.
+                console.log(error);
+            });
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -36,7 +47,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <a className="text-xl font-serif"><span className="text-3xl text-red-700">F</span>irstBuy</a>
+                <Link to='/' className="text-xl font-serif"><span className="text-3xl text-red-700">F</span>irstBuy</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -50,7 +61,12 @@ const Navbar = () => {
                 <div className="md:mx-5 mx-2 md:text-2xl">
                     <FaCartPlus className="cursor-pointer" />
                 </div>
-                <Link to='/signIn' className="border rounded-full px-3 py-0.5 hover:bg-slate-100 duration-700">Sign in</Link>
+                {
+                    user ?
+                        <Link onClick={handleLogOut} to='/signIn' className="border rounded-full px-3 py-0.5 hover:bg-slate-100 duration-700">Sign Out</Link>
+                        :
+                        <Link to='/signIn' className="border rounded-full px-3 py-0.5 hover:bg-slate-100 duration-700">Sign in</Link>
+                }
             </div>
         </div>
     );

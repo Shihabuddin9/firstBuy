@@ -1,44 +1,82 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import app from '../../../firebase/firebase.config'
 
 export const AuthContext = createContext(null)
+const auth = getAuth(app);
 
 const Context = ({ children }) => {
     const [allFoods, setAllFoods] = useState([])
     const [cartItems, setCartItems] = useState({})
     const [displayFood, setDisplayFood] = useState([])
+    const [user, setUser] = useState(null)
 
     const fetchData = async () => {
         try {
+            // Fetch data from foodData.json using axios
             const response = await axios.get('foodData.json');
+            // Set the fetched data to the state variable 'allFoods'
             setAllFoods(response.data);
         } catch (error) {
+            // If an error occurs during fetching, log the error to the console
             console.error('Error fetching data:', error);
         }
     };
 
     const handleFilterFood = (item) => {
         if (item && item !== 'All Foods') {
-            // If no category is selected, display all food items
+            // If a specific category is selected, filter the 'allFoods' array to display only items in that category
             const foodCategory = allFoods.filter(food => item === food.category);
+            // Update the state variable 'displayFood' with the filtered food items
             setDisplayFood(foodCategory);
         }
         else if (item === "All Foods") {
+            // If 'All Foods' is selected, display all food items
             setDisplayFood(allFoods);
         }
     }
 
+
     const addToCart = (itemId) => {
+        // Check if the item is not already in the cart
         if (!cartItems[itemId]) {
-            setCartItems(prev => ({ ...prev, [itemId]: 1 }))
+            // If not, add it to the cart with a quantity of 1
+            setCartItems(prev => ({ ...prev, [itemId]: 1 }));
         } else {
-            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+            // If the item is already in the cart, increase its quantity by 1
+            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         }
     }
 
     const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+        // Decrease the quantity of the item in the cart by 1
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     }
+
+    // create user sign Up
+    const createUserSignUp = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password)
+    }
+
+    // create user Sign in
+    const createUserSignIn = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    // log out
+    const createLogOut = () => {
+        return signOut(auth)
+    }
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+        })
+        return () => {
+            unSubscribe()
+        }
+    }, [])
 
     useEffect(() => {
         fetchData()
@@ -57,6 +95,10 @@ const Context = ({ children }) => {
         displayFood,
         setDisplayFood,
         handleFilterFood,
+        createUserSignUp,
+        createUserSignIn,
+        user,
+        createLogOut,
     }
     return (
         <AuthContext.Provider value={contextInfo}>
