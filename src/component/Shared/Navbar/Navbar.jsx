@@ -59,8 +59,9 @@ const Navbar = () => {
                     <CiSearch className="cursor-pointer" />
                 </div>
                 <div className="md:mx-5 mx-2 md:text-2xl">
-                    <FaCartPlus className="cursor-pointer" />
+                    <Link to='/cart'> <FaCartPlus className="cursor-pointer" /></Link>
                 </div>
+
                 {
                     user ?
                         <Link onClick={handleLogOut} to='/signIn' className="border rounded-full px-3 py-0.5 hover:bg-slate-100 duration-700">Sign Out</Link>

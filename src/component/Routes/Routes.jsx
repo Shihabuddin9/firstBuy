@@ -6,6 +6,7 @@ import AppDownload from "../Pages/AppDownload/AppDownload";
 import Menu from "../Pages/Menu/Menu";
 import SignIn from "../Pages/Login/signIn/SignIn";
 import SignUp from "../Pages/Login/SignUp/SignUp";
+import Cart from "../Pages/Cart/Cart";
 
 
 const Router = createBrowserRouter([
@@ -33,6 +34,10 @@ const Router = createBrowserRouter([
             {
                 path: '/signUp',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/cart',
+                element: <Cart></Cart>
             }
         ],
     },
