@@ -54,6 +54,19 @@ const Context = ({ children }) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     }
 
+    // calculate product price
+    let productPrice = 0;
+    for (let food of allFoods) {
+        const quantity = cartItems[food.id] || 0; // Check if item exists in cart
+        productPrice += food.price * quantity; // Accumulate product price
+    }
+    const formattedPrice = parseFloat(productPrice.toFixed(2));
+
+    // Filter out properties with value 0
+    const nonZeroItems = Object.keys(cartItems).filter(key => cartItems[key] !== 0);
+    // Get the length of non-zero properties
+    const totalItemsInShoppingCart = nonZeroItems.length;
+
     // create user sign Up
     const createUserSignUp = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
@@ -99,6 +112,8 @@ const Context = ({ children }) => {
         createUserSignIn,
         user,
         createLogOut,
+        formattedPrice,
+        totalItemsInShoppingCart,
     }
     return (
         <AuthContext.Provider value={contextInfo}>
