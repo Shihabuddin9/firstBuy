@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/Context/Context";
 
 const Navbar = () => {
-    const { createLogOut, user } = useContext(AuthContext)
+    const { createLogOut, user, totalItemsInShoppingCart } = useContext(AuthContext)
     const [isOpen, setIsOpen] = useState(false)
 
     const Links = <>
@@ -59,7 +59,13 @@ const Navbar = () => {
                     <CiSearch className="cursor-pointer" />
                 </div>
                 <div className="md:mx-5 mx-2 md:text-2xl">
-                    <Link to='/cart'> <FaCartPlus className="cursor-pointer" /></Link>
+                    {totalItemsInShoppingCart > 0 ?
+                        <Link className="relative" to='/cart'> <FaCartPlus className="text-green-600" />
+                            <span className={`absolute -top-2 -right-2 text-xs  bg-red-400 px-1 rounded-full transition-transform duration-500 ease-in-out`}>{totalItemsInShoppingCart}</span>
+                        </Link>
+                        :
+                        <Link to='/cart'> <FaCartPlus className="" /></Link>
+                    }
                 </div>
 
                 {

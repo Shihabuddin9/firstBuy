@@ -1,39 +1,45 @@
 import { useContext } from "react";
-import { IoMdAdd, IoIosAddCircle } from "react-icons/io";
+import { IoIosAddCircle } from "react-icons/io";
 import { AiFillMinusCircle } from "react-icons/ai";
 import { AuthContext } from "../../Provider/Context/Context";
+import { IoBagAddOutline } from "react-icons/io5";
 
 const FoodCart = ({ food }) => {
     const { id, name, price, description, category, image } = food
     const { addToCart, removeFromCart, cartItems, } = useContext(AuthContext)
 
     return (
-        <div className={`border md:border-0 py-7 rounded relative cursor-pointer
-        ${cartItems[id] ? 'hover:shadow shadow-md' : 'hover:shadow-md'}
-        `}>
-            <div>
-                <img className="p-5 w-60" src={image} alt="" />
-            </div>
-            <div className="mx-3">
-                <h2 className="font-semibold text-center">{name}</h2>
-                <h4 className="my-1 text-red-600 text-center">${price}</h4>
-                <p className=" text-gray-600 text-center">{description.slice(0, 50)}</p>
-            </div>
+        <div>
+            <div className="flex flex-col justify-center items-center bg-gray-50">
+                <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500">
+                    <a href="#">
+                        <img src={image} alt="Product image" className="h-52 w-72 object-cover" />
+                    </a>
+                    <div className="px-4 py-4 w-72">
+                        <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
+                        <p className="text-lg font-bold text-black truncate block capitalize">{name}</p>
+                        <div className="flex items-center">
+                            <p className="text-lg font-semibold text-black cursor-auto my-3">${price}</p>
+                            <del>
+                                <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
+                            </del>
+                            <div className="ml-auto">
+                                {
+                                    !cartItems[id] ?
+                                        <IoBagAddOutline onClick={() => addToCart(id)} className="bi bi-bag-plus text-2xl cursor-pointer" />
+                                        :
+                                        <div className="flex justify-center items-center">
+                                            <button onClick={() => removeFromCart(id)}><AiFillMinusCircle className="text-xl text-red-500" /></button>
 
-            <div className="absolute top-3 right-7">
-                {
-                    !cartItems[id] ?
-                        <button onClick={() => addToCart(id)}><IoMdAdd className="text-xl bg-slate-200 rounded-full p-0.5 text-gray-600 hover:text-sky-700" /></button>
-                        :
-                        <div className="flex justify-center items-center">
-                            <button onClick={() => removeFromCart(id)}><AiFillMinusCircle className="text-xl text-red-500" /></button>
+                                            <span className="mx-2.5">{cartItems[id]}</span>
 
-                            <span className="mx-2.5">{cartItems[id]}</span>
-
-                            <button onClick={() => addToCart(id)}><IoIosAddCircle className="text-xl text-green-500" /></button>
+                                            <button onClick={() => addToCart(id)}><IoIosAddCircle className="text-xl text-green-500" /></button>
+                                        </div>
+                                }
+                            </div>
                         </div>
-                }
-
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -54,6 +54,12 @@ const Context = ({ children }) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     }
 
+    const handleRemoved = (id) => {
+        const updatedCartItems = { ...cartItems };
+        delete updatedCartItems[id];
+        setCartItems(updatedCartItems);
+    }
+
     // calculate product price
     let productPrice = 0;
     for (let food of allFoods) {
@@ -114,6 +120,7 @@ const Context = ({ children }) => {
         createLogOut,
         formattedPrice,
         totalItemsInShoppingCart,
+        handleRemoved,
     }
     return (
         <AuthContext.Provider value={contextInfo}>
