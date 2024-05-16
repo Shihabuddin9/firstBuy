@@ -10,7 +10,7 @@ const Header = () => {
                     <div className="text-white md:w-2/3">
                         <h2 className="text-sm md:text-xl lg:text-2xl xl:text-4xl font-semibold">I would love to order my favorite food!</h2>
                         <p className="md:my-5 text-sm lg:text-base xl:text-lg hidden md:block">Explore diverse cuisines, discover top-rated restaurants, and satisfy your cravings with our curated selection of mouthwatering dishes.</p>
-                        <Link to="/menu"> <button className="btn btn-sm lg:btn-md xl:btn-lg btn-outline btn-info mt-5 md:mt-0 duration-700">View Menu</button></Link>
+                        <Link to="/menu"> <button className="btn btn-sm lg:btn-md xl:btn-lg btn-outline btn-info mt-2 md:mt-0 duration-700">View Menu</button></Link>
                     </div>
                 </div>
             </div>

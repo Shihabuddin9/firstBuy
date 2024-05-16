@@ -8,9 +8,10 @@ const FoodCart = ({ food }) => {
     const { id, name, price, description, category, image } = food
     const { addToCart, removeFromCart, cartItems, } = useContext(AuthContext)
 
+
     return (
         <div>
-            <div className="flex flex-col justify-center items-center bg-gray-50">
+            <div className="flex flex-col justify-center items-center">
                 <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500">
                     <a href="#">
                         <img src={image} alt="Product image" className="h-52 w-72 object-cover" />
@@ -23,17 +24,17 @@ const FoodCart = ({ food }) => {
                             <del>
                                 <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
                             </del>
-                            <div className="ml-auto">
+                            <div className="ml-auto ">
                                 {
                                     !cartItems[id] ?
                                         <IoBagAddOutline onClick={() => addToCart(id)} className="bi bi-bag-plus text-2xl cursor-pointer" />
                                         :
                                         <div className="flex justify-center items-center">
-                                            <button onClick={() => removeFromCart(id)}><AiFillMinusCircle className="text-xl text-red-500" /></button>
+                                            <button onClick={() => removeFromCart(id)}><AiFillMinusCircle className="md:text-xl text-2xl text-red-400" /></button>
 
                                             <span className="mx-2.5">{cartItems[id]}</span>
 
-                                            <button onClick={() => addToCart(id)}><IoIosAddCircle className="text-xl text-green-500" /></button>
+                                            <button onClick={() => addToCart(id)}><IoIosAddCircle className="md:text-xl text-2xl text-green-400" /></button>
                                         </div>
                                 }
                             </div>

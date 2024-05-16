@@ -7,6 +7,7 @@ import Menu from "../Pages/Menu/Menu";
 import SignIn from "../Pages/Login/signIn/SignIn";
 import SignUp from "../Pages/Login/SignUp/SignUp";
 import Cart from "../Pages/Cart/Cart";
+import PlaceOrder from "../Pages/PlaceOrder/PlaceOrder";
 
 
 const Router = createBrowserRouter([
@@ -38,6 +39,10 @@ const Router = createBrowserRouter([
             {
                 path: '/cart',
                 element: <Cart></Cart>
+            },
+            {
+                path: '/placeOrder',
+                element: <PlaceOrder></PlaceOrder>
             }
         ],
     },
