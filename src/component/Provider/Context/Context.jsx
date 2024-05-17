@@ -11,6 +11,7 @@ const Context = ({ children }) => {
     const [cartItems, setCartItems] = useState({})
     const [displayFood, setDisplayFood] = useState([])
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     const fetchData = async () => {
         try {
@@ -121,6 +122,7 @@ const Context = ({ children }) => {
         formattedPrice,
         totalItemsInShoppingCart,
         handleRemoved,
+        loading,
     }
     return (
         <AuthContext.Provider value={contextInfo}>
