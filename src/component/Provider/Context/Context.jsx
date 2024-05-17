@@ -107,7 +107,7 @@ const Context = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        console.log(cartItems);
+        // console.log(cartItems);
     }, [cartItems])
 
     const contextInfo = {
