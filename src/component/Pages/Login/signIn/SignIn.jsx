@@ -1,14 +1,19 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/Context/Context";
 import useTitle from "../../../../hooks/UseTitle/UseTitle";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
     useTitle('Sign in')
+    const [errorEmail, setErrorEmail] = useState('')
     const { createUserSignIn } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
 
     const handleSignIn = (e) => {
         e.preventDefault()
+        setErrorEmail('')
         const form = new FormData(e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
@@ -16,10 +21,13 @@ const SignIn = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                toast('successfully sign in')
+                navigate(`${location.state ? location?.state : '/'}`)
                 console.log(user);
             })
             .catch((error) => {
                 const errorCode = error.code;
+                setErrorEmail(errorCode)
                 console.log(errorCode);
             });
     }
@@ -55,6 +63,9 @@ const SignIn = () => {
                             <div className="form-control mt-2">
                                 <button className="btn bg-green-600">sign in</button>
                             </div>
+                            {
+                                errorEmail && <span className="text-red-500 text-center">{errorEmail}</span>
+                            }
                         </form>
                     </div>
                 </div>

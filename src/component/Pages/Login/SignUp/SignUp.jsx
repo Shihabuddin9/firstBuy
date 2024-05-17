@@ -1,25 +1,39 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Provider/Context/Context";
 import useTitle from "../../../../hooks/UseTitle/UseTitle";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
     useTitle('Sign Up')
+    const [errorPassword, setErrorPassword] = useState('')
+    const [errorEmail, setErrorEmail] = useState('')
     const { createUserSignUp } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+
     const handleSignUp = (e) => {
+        setErrorPassword('')
+        setErrorEmail('')
         e.preventDefault()
         const form = new FormData(e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
+        if (password.length < 6) {
+            setErrorPassword('Please enter more than 6 characters')
+            return
+        }
         createUserSignUp(email, password)
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
+                toast('successfully account create')
+                navigate(`${location.state ? location?.state : '/'}`)
                 console.log(user);
             })
             .catch((error) => {
                 const errorCode = error.code;
-                console.log(errorCode);
+                setErrorEmail(errorCode)
             });
     }
 
@@ -50,6 +64,9 @@ const SignUp = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                {
+                                    errorPassword && <span className="text-red-500 ml-2">{errorPassword}</span>
+                                }
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -60,6 +77,8 @@ const SignUp = () => {
                             <div className="form-control mt-2">
                                 <button className="btn bg-green-600">Sign Up</button>
                             </div>
+                            {errorEmail && <p className="text-red-500 text-center">{errorEmail}</p>
+                            }
                         </form>
                     </div>
                 </div>

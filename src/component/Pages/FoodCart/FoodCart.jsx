@@ -18,7 +18,7 @@ const FoodCart = ({ food }) => {
                             image ?
                                 <img src={image} alt="Product image" className="h-52 w-72 object-cover" />
                                 :
-                                <span className="loading loading-ring loading-md"></span>
+                                <p className="loading loading-ring loading-md"></p>
                         }
                     </a>
                     <div className="px-4 py-4 w-72">

@@ -8,6 +8,8 @@ import SignIn from "../Pages/Login/signIn/SignIn";
 import SignUp from "../Pages/Login/SignUp/SignUp";
 import Cart from "../Pages/Cart/Cart";
 import PlaceOrder from "../Pages/PlaceOrder/PlaceOrder";
+import MyOrders from "../Pages/MyOrders/MyOrders";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const Router = createBrowserRouter([
@@ -43,6 +45,10 @@ const Router = createBrowserRouter([
             {
                 path: '/placeOrder',
                 element: <PlaceOrder></PlaceOrder>
+            },
+            {
+                path: '/myOrders',
+                element: <PrivateRoutes><MyOrders></MyOrders></PrivateRoutes>
             }
         ],
     },

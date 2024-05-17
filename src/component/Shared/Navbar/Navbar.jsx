@@ -12,7 +12,8 @@ const Navbar = () => {
         <li> <NavLink to='/'>Home</NavLink></li>
         <li><NavLink className='md:mx-5 my-5 md:my-0' to='/menu'>Menu</NavLink></li>
         <li> <NavLink to='/mobileApp'>Mobile app</NavLink></li>
-        <li><NavLink className='md:ml-5 mt-5 md:mt-0' to='/errorPage'>Error Page</NavLink></li>
+        <li><NavLink className='md:mx-5' to='/myOrders'>My orders</NavLink></li>
+        <li><NavLink className=' mt-5 md:mt-0' to='/errorPage'>Error Page</NavLink></li>
     </>
 
     const toggleMenu = () => {
