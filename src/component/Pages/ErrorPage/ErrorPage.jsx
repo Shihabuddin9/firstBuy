@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import notFound from '../../../assets/Error-page/404.png'
 import { FaHome } from "react-icons/fa";
 import './ErrorPage.css'
+import useTitle from "../../../hooks/UseTitle/UseTitle";
 
 const ErrorPage = () => {
+    useTitle('Error Page')
     return (
         <div className='pt-28 pb-14 flex md:justify-evenly flex-col md:flex-row items-center mx-2 md:mx-0'>
             <div>

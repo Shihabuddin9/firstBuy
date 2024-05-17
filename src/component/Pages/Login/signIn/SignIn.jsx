@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Provider/Context/Context";
+import useTitle from "../../../../hooks/UseTitle/UseTitle";
 
 const SignIn = () => {
+    useTitle('Sign in')
     const { createUserSignIn } = useContext(AuthContext)
 
     const handleSignIn = (e) => {

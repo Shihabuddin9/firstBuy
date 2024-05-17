@@ -3,8 +3,10 @@ import { AuthContext } from "../../Provider/Context/Context";
 import { Link } from "react-router-dom";
 import { IoIosAdd } from "react-icons/io";
 import { FiMinus } from "react-icons/fi";
+import useTitle from "../../../hooks/UseTitle/UseTitle";
 
 const Cart = () => {
+    useTitle('Cart')
     const { allFoods, cartItems, formattedPrice, totalItemsInShoppingCart, addToCart, removeFromCart, handleRemoved } = useContext(AuthContext)
 
     let Shipping = 10;
@@ -46,7 +48,7 @@ const Cart = () => {
                                                             <div className="flex flex-col justify-between md:ml-4 flex-grow">
                                                                 <span className="font-bold text-sm"><img className="w-14" src={food.image} alt="" /></span>
                                                                 <span className="text-red-500 text-xs">{food.name}</span>
-                                                                <span onClick={() => handleRemoved(food.id)} className="font-semibold hover:text-red-500 text-gray-500 text-xs cursor-pointer">Remove</span>
+                                                                <span onClick={() => handleRemoved(food.id)} className="font-semibold hover:text-red-500 text-gray-500 text-xs cursor-pointer mt-3 md:mt-0">Remove</span>
                                                             </div>
                                                         </div>
                                                         <div className="flex justify-center items-center w-1/5">

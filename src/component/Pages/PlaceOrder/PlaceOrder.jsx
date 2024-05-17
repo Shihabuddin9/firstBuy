@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import useTitle from "../../../hooks/UseTitle/UseTitle";
 
 const PlaceOrder = () => {
+    useTitle('Place Order')
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
@@ -9,6 +12,7 @@ const PlaceOrder = () => {
         const name = form.get("name")
         console.log(name);
         // Clear all form fields
+        toast("Thanks for order")
         e.target.reset();
 
         setTimeout(() => {

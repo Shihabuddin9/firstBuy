@@ -1,6 +1,8 @@
 import googleApp from '../../../assets/mobile-appp/download.jpg'
 import playStoreApp from '../../../assets/mobile-appp/download.png'
+import useTitle from '../../../hooks/UseTitle/UseTitle';
 const AppDownload = () => {
+    useTitle('App Download')
     return (
         <div className="text-center min-h-screen mt-16">
             <h3 className="text-3xl font-bold">For Better Experience Download</h3>

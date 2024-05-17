@@ -1,7 +1,8 @@
-
+import ScrollToTop from "react-scroll-to-top";
 const Footer = () => {
     return (
         <div className="mt-16">
+            <ScrollToTop smooth width="40" height="25" />
             <footer className="footer p-10 bg-neutral text-neutral-content grid grid-cols-2 gap-2 md:flex justify-around items-center">
                 <nav>
                     <h6 className="footer-title">Services</h6>
