@@ -9,6 +9,7 @@ const Navbar = () => {
     const { createLogOut, user, totalItemsInShoppingCart, allFoods, setDisplayFood, searchText, setSearchText } = useContext(AuthContext)
     const [isOpen, setIsOpen] = useState(false)
     const [isSearch, setIsSearch] = useState(false)
+    const [getInput, setGetInput] = useState('')
 
     const handleHomeClick = () => {
         setSearchText('')
@@ -38,6 +39,22 @@ const Navbar = () => {
                 console.log(error);
             });
     }
+
+    const handleSearchQuery = () => {
+        setSearchText(getInput);
+    }
+
+    const combineHandle = () => {
+        handleSearchQuery()
+        toggleSearch()
+    }
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            setSearchText(getInput);
+            toggleSearch()
+        }
+    };
 
     useEffect(() => {
         if (searchText) {
@@ -80,10 +97,14 @@ const Navbar = () => {
 
             <div className="navbar-end">
                 {/* search */}
-                <label className={`input items-center fixed left-0 top-0 z-30 flex h-2/4 w-full bg-white shadow-lg transition-transform duration-500 ease-in-out ${isSearch ? 'translate-y-0 ' : '-translate-y-full '}`} >
-                    <input type="text" name='search' onChange={(e) => setSearchText(e.target.value)} className="grow" placeholder="Search" />
-                    <svg onClick={toggleSearch} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className=" opacity-70 cursor-pointer w-10 h-10 hover:text-green-500 border-white border hover:border hover:border-gray-300 transition-border duration-300 ease-in-out p-2"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
+                <label className={`input items-center fixed left-0 top-0 z-30 flex h-2/4 w-full bg-white shadow-lg transition-transform duration-500 ease-in-out ${isSearch ? 'translate-y-0 ' : '-translate-y-full'}`} >
+
+                    <input onKeyPress={handleKeyPress} type="text" name='search' onChange={(e) => setGetInput(e.target.value)} className="grow" placeholder="Search" />
+                    {/* <input type="text" name='search' onChange={(e) => setSearchText(e.target.value)} className="grow" placeholder="Search" /> */}
+
+                    <svg onClick={combineHandle} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className=" opacity-70 cursor-pointer w-10 h-10 hover:text-green-500 border-white border hover:border hover:border-gray-300 transition-border duration-300 ease-in-out p-2"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
                     <p className="ml-10 cursor-pointer text-xl p-2 font-semibold text-red-400 border border-white hover:border hover:border-gray-300 transition-border duration-300 ease-in-out" onClick={toggleSearch}><IoCloseOutline /></p>
+
                 </label>
                 <div onClick={toggleSearch} className=" md:text-2xl text-xl">
                     <CiSearch className="cursor-pointer" />

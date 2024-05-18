@@ -13,14 +13,14 @@ const FoodCart = ({ food }) => {
         <div>
             <div className="flex flex-col justify-center items-center">
                 <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500">
-                    <a href="#">
+                    <span>
                         {
                             image ?
-                                <img src={image} alt="Product image" className="h-52 w-72 object-cover" />
+                                <img src={image} alt="Product image" className="h-52 w-72 object-cover cursor-default" />
                                 :
                                 <p className="loading loading-ring loading-md"></p>
                         }
-                    </a>
+                    </span>
                     <div className="px-4 py-4 w-72">
                         <span className="text-gray-400 mr-3 uppercase text-xs">Brand</span>
                         <p className="text-lg font-bold text-black truncate block capitalize">{name}</p>
