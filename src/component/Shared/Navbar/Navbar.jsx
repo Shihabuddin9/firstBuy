@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../Provider/Context/Context";
 import { IoCloseOutline } from "react-icons/io5";
 
@@ -10,13 +10,14 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [isSearch, setIsSearch] = useState(false)
     const [getInput, setGetInput] = useState('')
+    const inputRef = useRef(null);
 
     const handleHomeClick = () => {
         setSearchText('')
     }
     const Links = <>
         <li onClick={handleHomeClick}> <NavLink to='/'>Home</NavLink></li>
-        <li><NavLink className='md:mx-5 my-5 md:my-0' to='/menu'>Menu</NavLink></li>
+        <li onClick={handleHomeClick}><NavLink className='md:mx-5 my-5 md:my-0' to='/menu'>Menu</NavLink></li>
         <li> <NavLink to='/mobileApp'>Mobile app</NavLink></li>
         <li><NavLink className='md:mx-5 my-5 md:my-0' to='/myOrders'>My orders</NavLink></li>
         <li><NavLink className='' to='/errorPage'>Error Page</NavLink></li>
@@ -67,6 +68,29 @@ const Navbar = () => {
             setDisplayFood(allFoods)
         }
     }, [searchText])
+
+    useEffect(() => {
+        // Focus the input when the component mounts
+        inputRef.current.focus();
+
+        // Ensure the cursor remains in the input
+        const handleBlur = () => {
+            setTimeout(() => {
+                if (document.activeElement !== inputRef.current) {
+                    inputRef.current.focus();
+                }
+            }, 0);
+        };
+
+        const inputElement = inputRef.current;
+        inputElement.addEventListener('blur', handleBlur);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            inputElement.removeEventListener('blur', handleBlur);
+        };
+    }, []);
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -99,7 +123,7 @@ const Navbar = () => {
                 {/* search */}
                 <label className={`input items-center fixed left-0 top-0 z-30 flex h-2/4 w-full bg-white shadow-lg transition-transform duration-500 ease-in-out ${isSearch ? 'translate-y-0 ' : '-translate-y-full'}`} >
 
-                    <input onKeyPress={handleKeyPress} type="text" name='search' onChange={(e) => setGetInput(e.target.value)} className="grow" placeholder="Search" />
+                    <input ref={inputRef} onKeyPress={handleKeyPress} type="text" name='search' onChange={(e) => setGetInput(e.target.value)} className="grow" placeholder="Search" />
                     {/* <input type="text" name='search' onChange={(e) => setSearchText(e.target.value)} className="grow" placeholder="Search" /> */}
 
                     <svg onClick={combineHandle} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className=" opacity-70 cursor-pointer w-10 h-10 hover:text-green-500 border-white border hover:border hover:border-gray-300 transition-border duration-300 ease-in-out p-2"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
