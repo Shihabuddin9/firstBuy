@@ -11,11 +11,16 @@ const FoodDisplay = () => {
     return (
         <div>
             <hr className="mb-10" />
-            <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5">
-                {
-                    displayFood?.map(food => <FoodCart key={food.id} food={food}></FoodCart>)
-                }
-            </div>
+            {
+                !displayFood.length ? <p className="text-2xl font-bold text-center my-24">Nothing was found</p>
+                    :
+                    <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-5">
+                        {
+                            displayFood?.map(food => <FoodCart key={food.id} food={food}></FoodCart>)
+                        }
+                    </div>
+            }
+
         </div>
     );
 };

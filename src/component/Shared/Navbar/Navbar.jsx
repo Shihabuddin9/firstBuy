@@ -1,21 +1,24 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaCartPlus } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/Context/Context";
 import { IoCloseOutline } from "react-icons/io5";
 
 const Navbar = () => {
-    const { createLogOut, user, totalItemsInShoppingCart } = useContext(AuthContext)
+    const { createLogOut, user, totalItemsInShoppingCart, allFoods, setDisplayFood, searchText, setSearchText } = useContext(AuthContext)
     const [isOpen, setIsOpen] = useState(false)
     const [isSearch, setIsSearch] = useState(false)
 
+    const handleHomeClick = () => {
+        setSearchText('')
+    }
     const Links = <>
-        <li> <NavLink to='/'>Home</NavLink></li>
+        <li onClick={handleHomeClick}> <NavLink to='/'>Home</NavLink></li>
         <li><NavLink className='md:mx-5 my-5 md:my-0' to='/menu'>Menu</NavLink></li>
         <li> <NavLink to='/mobileApp'>Mobile app</NavLink></li>
-        <li><NavLink className='md:mx-5' to='/myOrders'>My orders</NavLink></li>
-        <li><NavLink className=' mt-5 md:mt-0' to='/errorPage'>Error Page</NavLink></li>
+        <li><NavLink className='md:mx-5 my-5 md:my-0' to='/myOrders'>My orders</NavLink></li>
+        <li><NavLink className='' to='/errorPage'>Error Page</NavLink></li>
     </>
 
     const toggleMenu = () => {
@@ -35,6 +38,20 @@ const Navbar = () => {
                 console.log(error);
             });
     }
+
+
+
+    useEffect(() => {
+        if (searchText) {
+            setDisplayFood(
+                allFoods.filter(food => {
+                    return Object.values(food).join().toLowerCase().includes(searchText.toLowerCase())
+                })
+            )
+        } else {
+            setDisplayFood(allFoods)
+        }
+    }, [searchText])
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -65,18 +82,18 @@ const Navbar = () => {
             {/* search */}
             <div className="navbar-end">
                 <label className={`input items-center fixed left-0 top-0 z-30 flex h-2/4 w-full bg-white shadow-lg transition-transform duration-500 ease-in-out ${isSearch ? 'translate-y-0 ' : '-translate-y-full '}`} >
-                    <input type="text" className="grow" placeholder="Search" />
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70 cursor-pointer"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
+                    <input type="text" name='search' onChange={(e) => setSearchText(e.target.value)} className="grow" placeholder="Search" />
+                    <svg onClick={toggleSearch} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70 cursor-pointer"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
                     <p className="ml-10 cursor-pointer text-xl font-semibold text-red-400" onClick={toggleSearch}><IoCloseOutline /></p>
                 </label>
-                <div onClick={toggleSearch} className=" md:text-2xl">
+                <div onClick={toggleSearch} className=" md:text-2xl text-base">
                     <CiSearch className="cursor-pointer" />
                 </div>
 
-                <div className="md:mx-5 mx-2 md:text-2xl">
+                <div className="md:mx-5 mx-4 md:text-2xl">
                     {totalItemsInShoppingCart > 0 ?
                         <Link className="relative" to='/cart'> <FaCartPlus className="text-green-600" />
-                            <span className={`absolute -top-2 -right-2 text-xs  bg-red-400 px-1 rounded-full transition-transform duration-500 ease-in-out`}>{totalItemsInShoppingCart}</span>
+                            <span className={`absolute -top-3 -right-3 text-base  bg-red-400 md:px-2 px-1.5 rounded-full transition-transform duration-500 ease-in-out`}>{totalItemsInShoppingCart}</span>
                         </Link>
                         :
                         <Link to='/cart'> <FaCartPlus className="" /></Link>
