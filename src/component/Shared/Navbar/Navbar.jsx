@@ -39,8 +39,6 @@ const Navbar = () => {
             });
     }
 
-
-
     useEffect(() => {
         if (searchText) {
             setDisplayFood(
@@ -79,21 +77,22 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            {/* search */}
+
             <div className="navbar-end">
+                {/* search */}
                 <label className={`input items-center fixed left-0 top-0 z-30 flex h-2/4 w-full bg-white shadow-lg transition-transform duration-500 ease-in-out ${isSearch ? 'translate-y-0 ' : '-translate-y-full '}`} >
                     <input type="text" name='search' onChange={(e) => setSearchText(e.target.value)} className="grow" placeholder="Search" />
-                    <svg onClick={toggleSearch} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70 cursor-pointer"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
-                    <p className="ml-10 cursor-pointer text-xl font-semibold text-red-400" onClick={toggleSearch}><IoCloseOutline /></p>
+                    <svg onClick={toggleSearch} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className=" opacity-70 cursor-pointer w-10 h-10 hover:text-green-500 border-white border hover:border hover:border-gray-300 transition-border duration-300 ease-in-out p-2"><path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" /></svg>
+                    <p className="ml-10 cursor-pointer text-xl p-2 font-semibold text-red-400 border border-white hover:border hover:border-gray-300 transition-border duration-300 ease-in-out" onClick={toggleSearch}><IoCloseOutline /></p>
                 </label>
-                <div onClick={toggleSearch} className=" md:text-2xl text-base">
+                <div onClick={toggleSearch} className=" md:text-2xl text-xl">
                     <CiSearch className="cursor-pointer" />
                 </div>
 
                 <div className="md:mx-5 mx-4 md:text-2xl">
                     {totalItemsInShoppingCart > 0 ?
                         <Link className="relative" to='/cart'> <FaCartPlus className="text-green-600" />
-                            <span className={`absolute -top-3 -right-3 text-base  bg-red-400 md:px-2 px-1.5 rounded-full transition-transform duration-500 ease-in-out`}>{totalItemsInShoppingCart}</span>
+                            <span className={`absolute -top-3 -right-3 text-xl md:text-base  bg-red-400 md:px-2 px-1.5 rounded-full transition-transform duration-500 ease-in-out`}>{totalItemsInShoppingCart}</span>
                         </Link>
                         :
                         <Link to='/cart'> <FaCartPlus className="" /></Link>
@@ -102,9 +101,9 @@ const Navbar = () => {
 
                 {
                     user ?
-                        <Link onClick={handleLogOut} to='/signIn' className="border rounded-full px-3 py-0.5 hover:bg-slate-100 duration-700">Sign Out</Link>
+                        <Link onClick={handleLogOut} to='/signIn' className="border rounded-full px-1 md:px-3 md:py-0.5 hover:bg-slate-100 duration-700">Sign Out</Link>
                         :
-                        <Link to='/signIn' className="border rounded-full px-3 py-0.5 hover:bg-slate-100 duration-700">Sign in</Link>
+                        <Link to='/signIn' className="border rounded-full px-1 md:px-3 md:py-0.5 hover:bg-slate-100 duration-700">Sign in</Link>
                 }
             </div>
         </div>

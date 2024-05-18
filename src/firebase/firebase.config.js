@@ -13,6 +13,13 @@ const firebaseConfig = {
     appId: "1:347426556689:web:b18d6eccdbef3217da1ab0"
 };
 
+// apiKey: "AIzaSyCkT3W7pVzphCuZoJ5a6AVGCVaS0ftv16Y",
+// authDomain: "simple-firebase-2-994d7.firebaseapp.com",
+// projectId: "simple-firebase-2-994d7",
+// storageBucket: "simple-firebase-2-994d7.appspot.com",
+// messagingSenderId: "347426556689",
+// appId: "1:347426556689:web:b18d6eccdbef3217da1ab0"
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;
