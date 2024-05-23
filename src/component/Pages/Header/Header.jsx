@@ -1,5 +1,6 @@
 import './Header.css'
-import headerImg from '../../../assets/header-img/header-img.jpg'
+// import headerImg from '../../../assets/header-img/header-img.jpg'
+import headerImg from '../../../assets/header-img/delicious-flying-humburger-fast-food_983969-71.jpg'
 import { Link } from 'react-router-dom';
 const Header = () => {
     return (

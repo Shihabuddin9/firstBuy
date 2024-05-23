@@ -15,6 +15,7 @@ const Navbar = () => {
 
     if (searchText && location.pathname !== '/' && location.pathname !== '/menu') {
         navigate('/')
+        setSearchText('');
     }
 
     const handleHomeLinkClick = (targetRoute) => {
