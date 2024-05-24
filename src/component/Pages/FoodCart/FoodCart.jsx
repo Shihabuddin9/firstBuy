@@ -12,8 +12,8 @@ const FoodCart = ({ food }) => {
     return (
         <div>
             <div className="flex flex-col justify-center items-center">
-                <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500">
-                    <span>
+                <div className="bg-white shadow-md hover:scale-105 hover:shadow-xl duration-500 w-full">
+                    <span className=" flex justify-center items-center">
                         {
                             image ?
                                 <img src={image} alt="Product image" className="h-52 w-72 object-cover cursor-default" />
@@ -29,7 +29,7 @@ const FoodCart = ({ food }) => {
                             <del>
                                 <p className="text-sm text-gray-600 cursor-auto ml-2">$199</p>
                             </del>
-                            <div className="ml-auto ">
+                            <div className="ml-auto">
                                 {
                                     !cartItems[id] ?
                                         <IoBagAddOutline onClick={() => addToCart(id)} className="bi bi-bag-plus text-2xl cursor-pointer" />
