@@ -29,7 +29,6 @@ const Navbar = () => {
         <li onClick={() => handleHomeLinkClick('/menu')}><NavLink className='md:mx-5 my-5 md:my-0' to='/menu'>Menu</NavLink></li>
         <li onClick={() => handleHomeLinkClick('/mobileApp')}> <NavLink to='/mobileApp'>Mobile app</NavLink></li>
         <li onClick={() => handleHomeLinkClick('/myOrders')}><NavLink className='md:mx-5 my-5 md:my-0' to='/myOrders'>My orders</NavLink></li>
-        <li onClick={() => handleHomeLinkClick('/errorPage')}><NavLink className='' to='/errorPage'>Error Page</NavLink></li>
     </>
 
     const toggleMenu = () => {
